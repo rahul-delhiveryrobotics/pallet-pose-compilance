@@ -1,0 +1,34 @@
+{
+  "provenance": "measured",
+  "task": "detection",
+  "note": "REAL detection metrics on the merged real Roboflow data (2 classes: pallet, pallet_pocket). These are DETECTION (bounding-box) metrics, NOT pose metrics.",
+  "model": {
+    "weights": "/home/delhivery/Desktop/CV_SOP/weights/yolo26-det-pallet-v0.pt",
+    "base": "yolo26n.pt",
+    "arch": "YOLO26n (detection)"
+  },
+  "dataset": "/home/delhivery/Desktop/CV_SOP/data/merged_detection/data.yaml",
+  "split": "test",
+  "imgsz": 640,
+  "seed": 42,
+  "overall": {
+    "precision": 0.9559264387197539,
+    "recall": 0.9760764962290998,
+    "mAP50": 0.9892117903371097,
+    "mAP50-95": 0.7583549189666444
+  },
+  "per_class": {
+    "pallet": {
+      "precision": 0.9578509487628006,
+      "recall": 0.9772273655988709,
+      "mAP50": 0.9887634024968134,
+      "mAP50-95": 0.769597795720321
+    },
+    "pallet_pocket": {
+      "precision": 0.9540019286767071,
+      "recall": 0.9749256268593285,
+      "mAP50": 0.989660178177406,
+      "mAP50-95": 0.7471120422129677
+    }
+  }
+}

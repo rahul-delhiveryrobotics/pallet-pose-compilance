@@ -1,0 +1,55 @@
+# SYNTHETIC / SIMULATED camera calibration artefact (R8, R26.4).
+#
+# This calibration is SIMULATED, not measured. There is no physical camera
+# access, so intrinsics come from a pinhole model at a nominal field of view and
+# the extrinsics come from the assignment's nominal mounting (~1.2 m above the
+# floor, tilted ~20 deg down). The reprojection_error below is a STATED,
+# clearly-simulated figure, NEVER a real-world measurement. It exists so the
+# metric pipeline is runnable and every Assessment can reference a resolvable
+# calibration_id (R8.4, R24.7). See src/pallet_pose_compliance/calibration.
+#
+# Extrinsics map a camera-frame point to Floor_Frame: X_floor = R @ X_cam + t
+# (Floor_Frame: +X camera-right, +Y depth away, +Z up, floor at Z = 0).
+
+id: sim-cal-v0
+provenance: simulated
+
+# Intrinsics defined at this image size (width, height) in pixels.
+image_size: [1280, 720]
+
+# Camera matrix K = [[fx, 0, cx], [0, fy, cy], [0, 0, 1]] (pixels).
+# fx = fy derived from a 70 deg horizontal FOV at 1280 px width; principal point
+# at the image centre.
+intrinsics:
+  - [914.0147243149534, 0.0, 640.0]
+  - [0.0, 914.0147243149534, 360.0]
+  - [0.0, 0.0, 1.0]
+
+# Synthetic: no lens distortion (OpenCV order [k1, k2, p1, p2, k3]).
+distortion: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+extrinsics:
+  # 3x3 rotation, camera -> Floor_Frame, for a camera tilted 20 deg below
+  # horizontal (optical axis looks along +Y depth and downward toward the floor).
+  rotation:
+    - [1.0, 0.0, 0.0]
+    - [0.0, -0.3420201433256687, 0.9396926207859084]
+    - [0.0, -0.9396926207859084, -0.3420201433256687]
+  # Camera position in Floor_Frame (metres): 1.2 m above its ground nadir.
+  translation: [0.0, 0.0, 1.2]
+  note: "maps camera -> Floor_Frame: X_floor = R @ X_cam + t"
+
+# STATED (simulated) reprojection error. Not a measured value (R8.3, R26.2).
+reprojection_error:
+  value: 0.35
+  unit: pixels
+  provenance: simulated
+
+floor_origin_note: >-
+  simulated Floor_Frame origin at the camera's ground-projected nadir; no
+  physical fiducial (synthetic calibration)
+
+source: >-
+  synthetic/simulated calibration for the no-hardware case; intrinsics from a
+  pinhole model at ~70 deg horizontal FOV, extrinsics from the nominal ~1.2 m
+  height / ~20 deg down-tilt mounting

@@ -1,0 +1,13 @@
+{
+  "base_weights_used": "yolo26n.pt",
+  "requested_base_weights": "yolo26n.pt",
+  "substituted": false,
+  "epochs": 15,
+  "imgsz": 640,
+  "batch": 16,
+  "seed": 42,
+  "deterministic": true,
+  "device": 0,
+  "best_weights": "/home/delhivery/Desktop/CV_SOP/runs/detect/pallet-det-v0/weights/best.pt",
+  "exported_weights": "/home/delhivery/Desktop/CV_SOP/weights/yolo26-det-pallet-v0.pt"
+}

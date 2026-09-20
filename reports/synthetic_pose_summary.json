@@ -1,0 +1,55 @@
+{
+  "provenance": "simulated",
+  "generator": "scripts/generate_synthetic_pose.py",
+  "seed": 42,
+  "calibration_id": "sim-cal-v0",
+  "calibration_source": "loaded artefact configs/calibration/sim-cal-v0.yaml",
+  "image_size": [
+    1280,
+    720
+  ],
+  "requested_samples": 3000,
+  "accepted_samples": 3000,
+  "attempts": 3582,
+  "rejected_out_of_frame": 582,
+  "split_counts": {
+    "train": 2100,
+    "val": 450,
+    "test": 450
+  },
+  "split_fractions": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "sampling_ranges": {
+    "x_m": [
+      -1.5,
+      1.5
+    ],
+    "y_m": [
+      1.5,
+      6.0
+    ],
+    "theta_deg": [
+      -180.0,
+      180.0
+    ]
+  },
+  "keypoint_names": [
+    "bottom_corner_0",
+    "bottom_corner_1",
+    "bottom_corner_2",
+    "bottom_corner_3",
+    "top_corner_0",
+    "top_corner_1",
+    "top_corner_2",
+    "top_corner_3"
+  ],
+  "outputs": {
+    "dataset_dir": "/home/delhivery/Desktop/CV_SOP/data/synthetic_pose",
+    "data_yaml": "/home/delhivery/Desktop/CV_SOP/data/synthetic_pose/data.yaml",
+    "ground_truth_json": "/home/delhivery/Desktop/CV_SOP/data/synthetic_pose/ground_truth.json"
+  },
+  "honesty_note": "All images AND ground-truth poses are SIMULATED (rendered/projected), never measured. Rendering is deliberately simple (learnable geometry), not photorealistic; there is a synthetic-to-real gap."
+}

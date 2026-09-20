@@ -1,0 +1,102 @@
+{
+  "unified_names": [
+    "pallet",
+    "pallet_pocket"
+  ],
+  "splits": {
+    "train": {
+      "images": 9147,
+      "boxes": {
+        "pallet_pocket": 96493,
+        "pallet": 50218
+      }
+    },
+    "valid": {
+      "images": 591,
+      "boxes": {
+        "pallet_pocket": 5724,
+        "pallet": 2897
+      }
+    },
+    "test": {
+      "images": 370,
+      "boxes": {
+        "pallet_pocket": 2353,
+        "pallet": 1186
+      }
+    }
+  },
+  "per_dataset": {
+    "pallet-detect-b9dwy": {
+      "tag": "b9",
+      "images": {
+        "train": 6765,
+        "valid": 396,
+        "test": 262
+      },
+      "boxes": {
+        "train": {
+          "pallet_pocket": 57399,
+          "pallet": 28743
+        },
+        "valid": {
+          "pallet_pocket": 3222,
+          "pallet": 1554
+        },
+        "test": {
+          "pallet_pocket": 1580,
+          "pallet": 768
+        }
+      }
+    },
+    "plh-c-1-veibf": {
+      "tag": "plh",
+      "images": {
+        "train": 834,
+        "valid": 40,
+        "test": 29
+      },
+      "boxes": {
+        "train": {
+          "pallet_pocket": 1668,
+          "pallet": 153
+        },
+        "valid": {
+          "pallet_pocket": 88,
+          "pallet": 14
+        },
+        "test": {
+          "pallet_pocket": 58
+        }
+      }
+    },
+    "pallet-ff5lh-fp7tw": {
+      "tag": "ff",
+      "images": {
+        "train": 1548,
+        "valid": 155,
+        "test": 79
+      },
+      "boxes": {
+        "train": {
+          "pallet": 21322,
+          "pallet_pocket": 37426
+        },
+        "valid": {
+          "pallet": 1329,
+          "pallet_pocket": 2414
+        },
+        "test": {
+          "pallet": 418,
+          "pallet_pocket": 715
+        }
+      }
+    }
+  },
+  "skipped_empty_after_drop": {
+    "train": 3683,
+    "valid": 344,
+    "test": 151
+  },
+  "missing_image_for_label": 0
+}

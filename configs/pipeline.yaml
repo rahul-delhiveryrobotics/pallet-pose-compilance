@@ -1,0 +1,53 @@
+# Pipeline configuration (R28.3 reproducibility: fixed seed + config).
+# Every reported result references model_id and calibration_id (R24.7, R28.2).
+
+# Random seed used for all stochastic operations (training, Monte Carlo
+# uncertainty propagation, augmentation) so runs are reproducible.
+seed: 42
+
+# Detector model identifier recorded in every Assessment (R24.7).
+# Resolves to a weights artefact under weights/ (weights/<model_id>.pt).
+# yolo26-pose-pallet-v0 is the trained pose model (base yolo26n-pose.pt) trained
+# on the SIMULATED synthetic pose dataset; see reports/pose_train_meta.json.
+model_id: "yolo26-pose-pallet-v0"
+
+# Active calibration artefact set id; resolves to configs/calibration/<id>.yaml
+# and is recorded in every Assessment (R8.4, R24.7).
+calibration_id: "sim-cal-v0"
+
+# Detector input resolution (square). 640 is the standard box-visibility vs
+# latency trade-off; revisited in the latency plan (R20).
+input_resolution: 640
+
+# Assessment schema version identifier (R24.5).
+schema_version: "1.0.0"
+
+# Detector construction settings (task 4.8).
+# By default the pipeline builds the real YOLO-pose detector: it prefers an
+# assignment-trained artefact at weights/<model_id>.pt and otherwise falls back
+# to the stock checkpoint below (flagged not-assignment-trained, 'estimated';
+# R5.5, R26.3).
+detector:
+  # Stock/pretrained checkpoint used only when no assignment-trained weights
+  # exist. Inference from it is 'estimated', never 'measured' on the assignment
+  # model.
+  stock_model_id: "yolo11n-pose.pt"
+  # Detection confidence threshold passed to the model.
+  conf: 0.25
+  # Honesty discipline (R26.3/R26.4): when true, a development-only StubDetector
+  # is used if the real detector is unavailable (ultralytics/weights missing),
+  # with its detections clearly labelled NOT real. When false (default) an
+  # unavailable detector surfaces as an explicit blocker instead of fake output.
+  allow_stub_fallback: false
+
+# Paths (relative to repository root) used by pipeline stages.
+paths:
+  weights_dir: "weights"
+  data_dir: "data"
+  outputs_dir: "outputs"
+  reports_dir: "reports"
+  calibration_dir: "configs/calibration"
+  # SOP-PAL-03 thresholds config read by the real SOP analyzer (task 9.10).
+  # Editing configs/sop_thresholds.yaml changes check boundaries with no code
+  # change (R18.2); this path lets the pipeline locate that file per run.
+  sop_thresholds_path: "configs/sop_thresholds.yaml"

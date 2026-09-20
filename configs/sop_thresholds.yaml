@@ -1,0 +1,40 @@
+# SOP-PAL-03 thresholds exposed as external configuration (R18).
+#
+# Changing a value here changes the corresponding check boundary WITHOUT any
+# source-code modification (R18.2). Each threshold records its unit and the
+# SOP rule it belongs to. Documentation of format/location: R18.3.
+#
+# SOP-PAL-03 rules (see requirements Section 3):
+#   1. No box overhang greater than 3 cm.
+#   2. Load height no greater than 1.8 m.
+#   3. Aligned columns: no box rotated more than 15 deg relative to pallet axes.
+#   4. Larger boxes below smaller boxes (size inversion) - triaged separately.
+#   5. Load is stretch-wrapped - presence check.
+#   6. No visibly damaged/crushed box - triaged separately.
+#   7. Load centroid within 10 cm of pallet centre.
+#   8. Pallet undamaged - triaged separately.
+
+thresholds:
+  # Rule 1 - maximum permissible box overhang beyond the pallet edge.
+  overhang:
+    rule_id: 1
+    max_overhang_cm: 3.0
+    unit: "cm"
+
+  # Rule 2 - maximum permissible load height above the floor.
+  load_height:
+    rule_id: 2
+    max_height_m: 1.8
+    unit: "m"
+
+  # Rule 3 - maximum permissible box rotation relative to the pallet axes.
+  column_tilt:
+    rule_id: 3
+    max_tilt_deg: 15.0
+    unit: "deg"
+
+  # Rule 7 - maximum permissible load-centroid offset from the pallet centre.
+  centroid_offset:
+    rule_id: 7
+    max_offset_cm: 10.0
+    unit: "cm"

@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Testing / tooling caches
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Large data (datasets are NOT pushed to GitHub; see DATASET.md for sources).
+# Only small tracked artefacts (manifests, the dataset summary reports) are kept.
+data/**
+!data/.gitkeep
+
+# Trained model weights: tracked (they are small, <25MB total) so the repo is
+# self-contained per the assignment ("trained weights or link"). If they grow,
+# switch to a release/link and re-ignore.
+# weights/ is intentionally NOT ignored.
+
+# Training run logs / checkpoints (large, regenerable)
+runs/**
+!runs/.gitkeep
+
+# Generated outputs (illustrative examples committed explicitly if needed)
+outputs/**
+!outputs/.gitkeep
+
+# Stock/pretrained base weights downloaded by ultralytics (not our artefacts)
+/yolo*.pt
+weights/yolo26n.pt
+weights/yolo26n-pose.pt
+weights/yolo11n-pose.pt
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp

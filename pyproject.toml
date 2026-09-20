@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pallet-pose-compliance"
+version = "0.1.0"
+description = "Pallet Pose Estimation & Load Compliance (SOP-PAL-03) system"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.26,<3.0",
+    "opencv-python>=4.8,<5.0",
+    "pydantic>=2.5,<3.0",
+    "PyYAML>=6.0,<7.0",
+    "ultralytics>=8.1,<9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+    "hypothesis>=6.90,<7.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

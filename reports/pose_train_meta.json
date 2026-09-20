@@ -1,0 +1,39 @@
+{
+  "provenance": "simulated",
+  "trainer": "scripts/train_pose.py",
+  "base_model_requested": "yolo26n-pose.pt",
+  "base_model_used": "yolo26n-pose.pt",
+  "used_fallback_base": false,
+  "base_model_note": "primary base 'yolo26n-pose.pt' loaded",
+  "hyperparameters": {
+    "epochs": 20,
+    "batch": 16,
+    "imgsz": 640,
+    "device": "0",
+    "seed": 42,
+    "deterministic": true,
+    "fliplr": 0.0
+  },
+  "checkpoint_selection": "Ultralytics best.pt (selected by held-out pose fitness/mAP, not training loss)",
+  "dataset": {
+    "data_yaml": "/home/delhivery/Desktop/CV_SOP/data/synthetic_pose/data.yaml",
+    "note": "SIMULATED synthetic pose dataset (see synthetic_pose_summary.json)"
+  },
+  "outputs": {
+    "run_dir": "/home/delhivery/Desktop/CV_SOP/runs/pose/pallet-pose-v0",
+    "best_weights": "/home/delhivery/Desktop/CV_SOP/runs/pose/pallet-pose-v0/weights/best.pt",
+    "copied_weights": "/home/delhivery/Desktop/CV_SOP/weights/yolo26-pose-pallet-v0.pt"
+  },
+  "final_validation_metrics": {
+    "metrics/precision(B)": 0.9998752420193064,
+    "metrics/recall(B)": 1.0,
+    "metrics/mAP50(B)": 0.995,
+    "metrics/mAP50-95(B)": 0.9898533587929551,
+    "metrics/precision(P)": 0.9998752420193064,
+    "metrics/recall(P)": 1.0,
+    "metrics/mAP50(P)": 0.995,
+    "metrics/mAP50-95(P)": 0.9949999999999999,
+    "fitness": 1.984853358792955
+  },
+  "honesty_note": "Trained on SIMULATED data; accuracy is against simulated GT only. There is a synthetic-to-real gap (simple rendered pallets)."
+}

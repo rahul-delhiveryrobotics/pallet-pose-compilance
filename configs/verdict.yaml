@@ -1,0 +1,41 @@
+# Verdict engine configuration: thresholds + pose-quality weighting (R17.6, R17.7).
+#
+# The verdict is one of PASS / FAIL / MANUAL_INSPECTION. A confirmed mandatory
+# violation yields FAIL and is never averaged away by passing checks
+# (critical-failure dominance, R17.5). Every threshold below is documented with
+# justification (R17.6) and the pose-quality weighting is documented (R17.7).
+
+# Mandatory SOP rule ids: a confirmed violation of any of these forces FAIL.
+mandatory_rule_ids: [1, 2, 3, 5, 7]
+
+# Per-check confidence at or above which a FAIL is treated as a CONFIRMED
+# violation (rather than insufficient evidence -> MANUAL_INSPECTION).
+# Justification: below this the evidence is too weak to fail a pallet outright.
+confirmed_violation_min_confidence: 0.70
+
+# Per-check confidence at or above which a PASS is treated as ADEQUATE evidence
+# that the rule is satisfied. Justification: PASS requires positive evidence,
+# not mere absence of a detected violation.
+adequate_pass_min_confidence: 0.60
+
+# Pose-quality weighting (R17.7). Pose quality is treated as a GATE on
+# pose-dependent checks, not as a score averaged against load compliance, so a
+# critical failure can never be offset. When pose uncertainty exceeds the
+# threshold below, pose-dependent checks are invalidated and the verdict
+# degrades to MANUAL_INSPECTION rather than PASS/FAIL.
+pose_quality:
+  # Treatment of pose quality: "gate" (invalidate pose-dependent checks when
+  # unreliable) rather than "weighted_average" (which could offset failures).
+  mode: "gate"
+  # Maximum position uncertainty (1-sigma) tolerated before pose is deemed
+  # unreliable for pose-dependent SOP checks.
+  max_position_std_cm: 5.0
+  # Maximum orientation uncertainty (1-sigma) tolerated before pose is deemed
+  # unreliable for pose-dependent SOP checks.
+  max_orientation_std_deg: 5.0
+
+# Verdict labels (documented for downstream consumers).
+verdicts:
+  - "PASS"
+  - "FAIL"
+  - "MANUAL_INSPECTION"
