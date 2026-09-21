@@ -1,0 +1,24 @@
+# Decision log
+
+This log records significant decisions, tradeoffs, costs, and provenance choices. Facts are taken from repository reports/code; no unrecorded benchmark or annotation result is added.
+
+| Decision | Rationale / benefit | Cost or risk | Evidence / artifact |
+|---|---|---|---|
+| Merge three public Roboflow sources into two classes: `pallet`, `pallet_pocket`. | Makes a runnable detector baseline and preserves the target taxonomy. | Source taxonomy mismatch; dropped `fork`, `front`, `wood`, `hole_left`, `hole_right`, `pallet_front`; possible semantic noise. | `DATASET.md`, `scripts/merge_detection_data.py` |
+| Preserve source train/valid/test assignment rather than invent a new split. | Retains source provenance and makes the held-out test reproducible. | It is not a grouped scene/session/pallet-instance holdout; duplicates/near-duplicates may cross splits. | `DATASET.md`, `reports/merged_detection_summary.json` |
+| Convert polygon labels to axis-aligned boxes. | Supports a common YOLO detection format with a small implementation. | Loses polygon/oriented boundary detail and may loosen boxes for oblique pallets. | `DATASET.md`, `reports/detection_training_notes.md` |
+| Skip images empty after target-class filtering. | Avoids silently inventing labels after class dropping. | Removes intentional empty negatives and changes background coverage. | `DATASET.md`, merge summary skipped counts |
+| Train a small YOLO26 detector at 640 px for 15 epochs and a YOLO26 pose model on synthetic data. | Fits the recorded quick-build compute budget and keeps the pipeline runnable. | Model capacity/training duration and simple synthetic pose renders limit generalisation. | `reports/detection_train_meta.json`, `reports/pose_train_meta.json` |
+| Use known-geometry PnP with true bottom/top corner heights. | Correctly models elevated points, distortion, visibility, ambiguity, and Floor_Frame composition. | Requires eight-corner pose labels and calibration quality not available for the real data. | `src/pallet_pose_compliance/geometry/pose.py` |
+| Use simulated calibration `sim-cal-v0` and simulated pose ground truth. | Enables deterministic geometry testing without hardware. | Cannot establish real pose accuracy or real-world compliance. | `configs/calibration/sim-cal-v0.yaml`, `reports/pose_eval_metrics.json` |
+| Make pose uncertainty an estimated Monte Carlo quantity and degrade loudly. | Prevents confidently wrong metric outputs. | Assumptions are not empirically calibrated; some otherwise solvable cases become unavailable. | `src/.../geometry/pose.py`, `configs/verdict.yaml` |
+| Report camera-height/tilt sensitivity only on a small fixed simulated grid. | Answers short/long range sensitivity reproducibly and avoids extrapolation. | Grid is not a measured physical envelope; unlisted conditions remain unknown. | `scripts/pose_sensitivity.py`, `reports/pose_sensitivity.json` |
+| Classify conditions as `meets_tolerance`, `fails_tolerance`, or `insufficient_evidence` using the existing envelope helper. | Keeps the classification partition and unavailable-sample treatment consistent. | Classification is against simulated poses and an evaluation target, not a guarantee. | `src/.../geometry/pose_envelope.py` |
+| Keep SOP rules 4/6/8 unresolved and pose-dependent checks invalidated when pose is unavailable. | Respects single-side visibility and downstream honesty. | Automated coverage is intentionally incomplete; manual inspection remains necessary. | `src/.../sop/triage.py`, `src/.../sop/checks.py` |
+| Use verdict pose quality as a gate, not an average. | A confirmed mandatory failure cannot be offset by good pose or other checks. | More cases become `MANUAL_INSPECTION` instead of an optimistic binary verdict. | `configs/verdict.yaml`, `src/.../verdict/engine.py` |
+| Provide illustrative PASS/FAIL/MANUAL examples with a sidecar marker. | Exercises the versioned schema for all verdict values without misrepresenting outcomes. | Examples are not evidence and have no measured sample count. | `outputs/examples/`, `outputs/examples/README.txt` |
+| Do not claim real calibration, measured real pose ground truth, quantisation delta, Jetson benchmark, or screen recording. | These artifacts are unavailable in the repository. | Assignment remains incomplete in those areas; real-world compliance is unverified. | `reports/requirements_checklist.md`, `README.md` |
+
+## AI-tool record
+
+The assistant helped with implementation/documentation. One concrete mistake was caught: the initial live demo failed because `roboflow` installed `opencv-python-headless`, which broke `cv2.imshow`. This was diagnosed and fixed by removing the headless package and reinstalling GUI-enabled OpenCV. The correction is recorded here rather than hiding the failed first attempt.

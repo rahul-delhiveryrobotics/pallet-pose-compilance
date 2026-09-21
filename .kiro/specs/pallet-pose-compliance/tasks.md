@@ -87,7 +87,7 @@ Conventions:
   - [x] 4.8 Integrate real detector into the pipeline (replace stub)
     - Swap the stub detector for the trained/wrapped detector; keep the fallback path wired; re-run smoke test
     - _Requirements: 4.1_
-  - [ ]* 4.9 Accuracy ceiling estimate
+  - [x]* 4.9 Accuracy ceiling estimate
     - Compute and report an `estimated` accuracy ceiling given current data volume with narrative on how to raise it
     - _Requirements: 6.1, 6.2, 6.3_
 
@@ -231,17 +231,17 @@ Conventions:
     - `scripts/export.py`: INT8 export; measure task-relevant deltas (keypoint pixel precision, pose error, tolerance success rate, changed SOP verdicts) with INT8 calibration data kept separate from the test set; attach provenance
     - _Requirements: 21.1, 21.2, 21.3_
 
-- [ ] 15. Deliverables and documentation
-  - [ ]* 15.1 Write DATASET.md
+- [x] 15. Deliverables and documentation
+  - [x]* 15.1 Write DATASET.md
     - Provenance of every source (name, access, citation), sourcing cost, licences + rejection reasons, class/annotation counts, one-page labelling guideline, known biases/gaps
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.2, 2.3_
-  - [ ]* 15.2 Write README with the five required sections
+  - [x]* 15.2 Write README with the five required sections
     - Approach + significant decisions with cost; results as distributions with sample counts; three worst failure cases with images, root-caused; what could not be finished and why; AI tools used and one thing an AI tool got wrong that was caught
     - _Requirements: 29.1, 29.2, 29.3, 29.4, 29.5, 28.1_
-  - [ ]* 15.3 Write decision log and requirements checklist
+  - [x]* 15.3 Write decision log and requirements checklist
     - `reports/decision_log.md` (each significant decision + cost + AI-tool note); `reports/requirements_checklist.md` (R1–R29 → where satisfied, honestly-marked unfinished items)
     - _Requirements: 4.3, 4.4, 28.1, 29.1, 29.4_
-  - [ ]* 15.4 Generate illustrative PASS/FAIL/MANUAL_INSPECTION Assessment examples
+  - [x]* 15.4 Generate illustrative PASS/FAIL/MANUAL_INSPECTION Assessment examples
     - At least one Assessment example per verdict type in `outputs/`, each labelled illustrative (never presented as measured)
     - _Requirements: 25.1, 25.2, 25.3_
 

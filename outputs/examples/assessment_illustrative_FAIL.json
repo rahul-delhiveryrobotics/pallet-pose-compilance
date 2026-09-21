@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0.0",
+  "pallet_id": "illustrative-fail",
+  "timestamp": "2026-09-21T08:30:14.126956+00:00",
+  "source_image_ref": "outputs/failure_cases/representative_01_simulated_keypoint_localisation_gap.png",
+  "model_id": "yolo26-pose-pallet-v0",
+  "calibration_id": "sim-cal-v0",
+  "pose": {
+    "pose_status": "available",
+    "reason_code": null,
+    "position_m": {
+      "x": 1.25,
+      "y": 3.1
+    },
+    "orientation_deg": 4.0,
+    "orientation_symmetry_reduced": false,
+    "face_identity": "stringer_front",
+    "admissible_solutions": [],
+    "uncertainty": {
+      "position_cov_m2": [
+        [
+          0.0001,
+          0.0
+        ],
+        [
+          0.0,
+          0.0001
+        ]
+      ],
+      "orientation_std_deg": 0.5,
+      "method": "illustrative",
+      "assumptions": [
+        "illustrative only; not measured"
+      ],
+      "provenance": "estimated"
+    },
+    "range_m": 3.35,
+    "viewing_angle_deg": 20.0,
+    "quality_flags": [],
+    "provenance": "estimated"
+  },
+  "sop_checks": [
+    {
+      "rule_id": 1,
+      "rule_name": "No box overhang greater than 3 cm",
+      "triage": "partially_verifiable",
+      "status": "fail",
+      "confidence": 0.95,
+      "confidence_semantics": "raw_detector_score",
+      "measurement": 2.0,
+      "measurement_unit": "cm",
+      "uncertainty": null,
+      "threshold_used": 3.0,
+      "threshold_source": "configs/sop_thresholds.yaml",
+      "evidence_refs": [],
+      "assumptions": [
+        "A reliable metric pose is available to convert pixel offsets to centimetres in the pallet frame.",
+        "The pallet edge is visible and not fully occluded by the load."
+      ],
+      "hidden_regions": [
+        "the rear (far-side) pallet edges not facing the camera",
+        "box faces on the occluded side of the load"
+      ],
+      "reason_code": null,
+      "provenance": "measured"
+    },
+    {
+      "rule_id": 2,
+      "rule_name": "Load height no greater than 1.8 m",
+      "triage": "verifiable",
+      "status": "pass",
+      "confidence": 0.9,
+      "confidence_semantics": "raw_detector_score",
+      "measurement": 1.0,
+      "measurement_unit": "m",
+      "uncertainty": null,
+      "threshold_used": 1.8,
+      "threshold_source": "configs/sop_thresholds.yaml",
+      "evidence_refs": [],
+      "assumptions": [
+        "The top surface of the tallest part of the load is visible (not cut off by the frame or hidden behind a taller neighbour).",
+        "Calibration relates image vertical extent to metric height at the load's range."
+      ],
+      "hidden_regions": [
+        "any load protrusion taller than the visible front stack but hidden behind it"
+      ],
+      "reason_code": null,
+      "provenance": "measured"
+    },
+    {
+      "rule_id": 3,
+      "rule_name": "Aligned columns: no box rotated more than 15 deg relative to the pallet axes",
+      "triage": "partially_verifiable",
+      "status": "pass",
+      "confidence": 0.9,
+      "confidence_semantics": "raw_detector_score",
+      "measurement": 1.0,
+      "measurement_unit": "deg",
+      "uncertainty": null,
+      "threshold_used": 15.0,
+      "threshold_source": "configs/sop_thresholds.yaml",
+      "evidence_refs": [],
+      "assumptions": [
+        "A reliable metric pose defines the pallet axes to measure box rotation against.",
+        "Box edges are sharp enough in the image to estimate orientation."
+      ],
+      "hidden_regions": [
+        "interior columns occluded by the front row of boxes",
+        "columns on the far side of the load"
+      ],
+      "reason_code": null,
+      "provenance": "measured"
+    },
+    {
+      "rule_id": 4,
+      "rule_name": "Larger boxes below smaller boxes (no size inversion)",
+      "triage": "not_verifiable",
+      "status": "unresolved",
+      "confidence": null,
+      "confidence_semantics": null,
+      "measurement": null,
+      "measurement_unit": null,
+      "uncertainty": null,
+      "threshold_used": null,
+      "threshold_source": null,
+      "evidence_refs": [],
+      "assumptions": [
+        "Box depth (dimension away from the camera) is not observable from a single side without a second view or depth sensor."
+      ],
+      "hidden_regions": [
+        "the depth extent of every box (front face only is imaged)",
+        "boxes in interior layers hidden behind the front stack",
+        "the far side of the load"
+      ],
+      "reason_code": null,
+      "provenance": "unavailable"
+    },
+    {
+      "rule_id": 5,
+      "rule_name": "Load is stretch-wrapped",
+      "triage": "verifiable",
+      "status": "pass",
+      "confidence": 0.9,
+      "confidence_semantics": "heuristic_evidence_quality",
+      "measurement": 1.0,
+      "measurement_unit": null,
+      "uncertainty": null,
+      "threshold_used": null,
+      "threshold_source": null,
+      "evidence_refs": [],
+      "assumptions": [
+        "Wrap present on the observed faces is representative of the load being wrapped (a load wrapped only on the hidden side is out of scope of a single-side check).",
+        "Lighting is adequate to distinguish film from bare cardboard."
+      ],
+      "hidden_regions": [
+        "wrap coverage on the far side of the load (presence on the visible side is what is verified)"
+      ],
+      "reason_code": null,
+      "provenance": "measured"
+    },
+    {
+      "rule_id": 6,
+      "rule_name": "No visibly damaged or crushed box",
+      "triage": "not_verifiable",
+      "status": "unresolved",
+      "confidence": null,
+      "confidence_semantics": null,
+      "measurement": null,
+      "measurement_unit": null,
+      "uncertainty": null,
+      "threshold_used": null,
+      "threshold_source": null,
+      "evidence_refs": [],
+      "assumptions": [
+        "Damage on hidden faces is not inferable from the visible faces."
+      ],
+      "hidden_regions": [
+        "the far side of the load",
+        "faces of interior boxes hidden behind the front row",
+        "the underside of boxes resting on lower layers"
+      ],
+      "reason_code": null,
+      "provenance": "unavailable"
+    },
+    {
+      "rule_id": 7,
+      "rule_name": "Load centroid within 10 cm of the pallet centre",
+      "triage": "partially_verifiable",
+      "status": "pass",
+      "confidence": 0.9,
+      "confidence_semantics": "raw_detector_score",
+      "measurement": 1.0,
+      "measurement_unit": "cm",
+      "uncertainty": null,
+      "threshold_used": 10.0,
+      "threshold_source": "configs/sop_thresholds.yaml",
+      "evidence_refs": [],
+      "assumptions": [
+        "A reliable metric pose locates the pallet centre in the floor frame.",
+        "The visible load extent is a usable proxy for lateral centroid offset; depth-direction offset is only weakly observable."
+      ],
+      "hidden_regions": [
+        "the depth (camera-axis) distribution of load mass",
+        "mass on the far side of the load"
+      ],
+      "reason_code": null,
+      "provenance": "measured"
+    },
+    {
+      "rule_id": 8,
+      "rule_name": "Pallet undamaged: no broken boards or split stringers",
+      "triage": "not_verifiable",
+      "status": "unresolved",
+      "confidence": null,
+      "confidence_semantics": null,
+      "measurement": null,
+      "measurement_unit": null,
+      "uncertainty": null,
+      "threshold_used": null,
+      "threshold_source": null,
+      "evidence_refs": [],
+      "assumptions": [
+        "Structural integrity of hidden boards/stringers cannot be inferred from the small visible portion of the pallet."
+      ],
+      "hidden_regions": [
+        "deckboards and stringers occluded by the load resting on the pallet",
+        "the underside and far-side stringers of the pallet",
+        "the internal structure of the pallet"
+      ],
+      "reason_code": null,
+      "provenance": "unavailable"
+    }
+  ],
+  "verdict": {
+    "verdict": "FAIL",
+    "reason_codes": [],
+    "reasoning_text": "Illustrative FAIL only: rule 1 is shown as a confirmed mandatory violation; not a measured result.",
+    "pose_quality_weighting": 1.0,
+    "contributing_checks": [
+      1
+    ]
+  },
+  "quality_flags": [],
+  "reason_codes": [],
+  "timings": {
+    "ingest_ms": null,
+    "detect_ms": null,
+    "localise_ms": null,
+    "pose_ms": null,
+    "sop_ms": null,
+    "verdict_ms": null,
+    "total_ms": null
+  },
+  "failure": {
+    "failed": false,
+    "reason_code": null
+  }
+}

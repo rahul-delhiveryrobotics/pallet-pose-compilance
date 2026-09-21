@@ -1,0 +1,1799 @@
+{
+  "provenance": "simulated",
+  "analysis": "camera height and down-tilt mis-set sensitivity",
+  "comparison": "estimated pose against known simulated pose",
+  "seed": 42,
+  "samples_per_condition": 16,
+  "condition_count": 12,
+  "grids": {
+    "height_error_grid_m": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "tilt_error_grid_deg": [
+      0.0,
+      3.0,
+      6.0
+    ]
+  },
+  "range_definitions": {
+    "short": [
+      2.5,
+      3.5
+    ],
+    "long": [
+      6.0,
+      8.0
+    ]
+  },
+  "tolerance": {
+    "position_tolerance_m": 0.02,
+    "orientation_tolerance_deg": 3.0,
+    "semantics": "evaluation_target_not_guarantee"
+  },
+  "conditions": [
+    {
+      "error_type": "camera_height",
+      "error_amount": 0.0,
+      "error_unit": "m",
+      "range_name": "short",
+      "range_y_m": [
+        2.5,
+        3.5
+      ],
+      "label": "meets_tolerance",
+      "pass_fraction_combined": 1.0,
+      "pass_fraction_radial": 1.0,
+      "pass_fraction_orientation": 1.0,
+      "radial_error_m": {
+        "median": 8.881784197001252e-16,
+        "p95": 1.785654722323884e-15,
+        "max": 1.790180836524724e-15
+      },
+      "orientation_error_deg": {
+        "median": 7.105427357601002e-15,
+        "p95": 2.842170943040401e-14,
+        "max": 2.842170943040401e-14
+      },
+      "coverage_fraction": 1.0,
+      "available_samples": 16,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 16,
+            "mean": -4.5102810375396984e-17,
+            "std": 1.3161053315495954e-16,
+            "min": -3.3306690738754696e-16,
+            "max": 1.6653345369377348e-16,
+            "median": 0.0,
+            "p90": 1.1102230246251565e-16,
+            "p95": 1.249000902703301e-16,
+            "unit": "m",
+            "values": [
+              -1.1102230246251565e-16,
+              0.0,
+              1.1102230246251565e-16,
+              0.0,
+              -1.1102230246251565e-16,
+              5.551115123125783e-17,
+              1.1102230246251565e-16,
+              0.0,
+              2.7755575615628914e-17,
+              0.0,
+              -3.3306690738754696e-16,
+              1.6653345369377348e-16,
+              -2.220446049250313e-16,
+              -1.1102230246251565e-16,
+              -8.326672684688674e-17,
+              -2.220446049250313e-16
+            ]
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 16,
+            "mean": 4.996003610813204e-16,
+            "std": 8.139532547199557e-16,
+            "min": -8.881784197001252e-16,
+            "max": 1.7763568394002505e-15,
+            "median": 4.440892098500626e-16,
+            "p90": 1.5543122344752192e-15,
+            "p95": 1.7763568394002505e-15,
+            "unit": "m",
+            "values": [
+              8.881784197001252e-16,
+              4.440892098500626e-16,
+              0.0,
+              8.881784197001252e-16,
+              0.0,
+              -8.881784197001252e-16,
+              1.3322676295501878e-15,
+              -8.881784197001252e-16,
+              4.440892098500626e-16,
+              0.0,
+              -4.440892098500626e-16,
+              1.7763568394002505e-15,
+              1.7763568394002505e-15,
+              8.881784197001252e-16,
+              1.3322676295501878e-15,
+              4.440892098500626e-16
+            ]
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 16,
+            "mean": 8.040772875292116e-16,
+            "std": 5.337937179122215e-16,
+            "min": 0.0,
+            "max": 1.790180836524724e-15,
+            "median": 8.881784197001252e-16,
+            "p90": 1.560515786523969e-15,
+            "p95": 1.785654722323884e-15,
+            "unit": "m",
+            "values": [
+              8.95090418262362e-16,
+              4.440892098500626e-16,
+              1.1102230246251565e-16,
+              8.881784197001252e-16,
+              1.1102230246251565e-16,
+              8.899114524108741e-16,
+              1.336885555457667e-15,
+              8.881784197001252e-16,
+              4.449557262054371e-16,
+              0.0,
+              5.551115123125783e-16,
+              1.784146017590271e-15,
+              1.790180836524724e-15,
+              8.95090418262362e-16,
+              1.3348671786163112e-15,
+              4.965068306494546e-16
+            ]
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 16,
+            "mean": 8.040772875292116e-14,
+            "std": 5.3379371791222144e-14,
+            "min": 0.0,
+            "max": 1.7901808365247238e-13,
+            "median": 8.881784197001252e-14,
+            "p90": 1.5605157865239689e-13,
+            "p95": 1.785654722323884e-13,
+            "unit": "cm",
+            "values": [
+              8.950904182623619e-14,
+              4.440892098500626e-14,
+              1.1102230246251565e-14,
+              8.881784197001252e-14,
+              1.1102230246251565e-14,
+              8.899114524108741e-14,
+              1.3368855554576671e-13,
+              8.881784197001252e-14,
+              4.4495572620543707e-14,
+              0.0,
+              5.551115123125783e-14,
+              1.7841460175902709e-13,
+              1.7901808365247238e-13,
+              8.950904182623619e-14,
+              1.3348671786163111e-13,
+              4.965068306494546e-14
+            ]
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 16,
+            "mean": 9.686695889854491e-15,
+            "std": 9.992277063856797e-15,
+            "min": 0.0,
+            "max": 2.842170943040401e-14,
+            "median": 7.105427357601002e-15,
+            "p90": 2.842170943040401e-14,
+            "p95": 2.842170943040401e-14,
+            "unit": "deg",
+            "values": [
+              2.842170943040401e-14,
+              1.0658141036401503e-14,
+              1.0658141036401503e-14,
+              0.0,
+              7.105427357601002e-15,
+              3.9968028886505635e-15,
+              2.842170943040401e-14,
+              3.552713678800501e-15,
+              1.0658141036401503e-14,
+              0.0,
+              0.0,
+              2.842170943040401e-14,
+              7.105427357601002e-15,
+              0.0,
+              1.7763568394002505e-15,
+              1.4210854715202004e-14
+            ]
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 16,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": 1.0,
+          "pass_fraction_dy": 1.0,
+          "pass_fraction_radial": 1.0,
+          "pass_fraction_orientation": 1.0,
+          "pass_fraction_combined": 1.0,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 16,
+          "unavailable_samples": 0,
+          "coverage_fraction": 1.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_height",
+      "error_amount": 0.0,
+      "error_unit": "m",
+      "range_name": "long",
+      "range_y_m": [
+        6.0,
+        8.0
+      ],
+      "label": "meets_tolerance",
+      "pass_fraction_combined": 1.0,
+      "pass_fraction_radial": 1.0,
+      "pass_fraction_orientation": 1.0,
+      "radial_error_m": {
+        "median": 2.67952118285121e-15,
+        "p95": 1.3778258883349379e-14,
+        "max": 1.778575899402738e-14
+      },
+      "orientation_error_deg": {
+        "median": 1.4210854715202004e-14,
+        "p95": 3.197442310920451e-14,
+        "max": 4.263256414560601e-14
+      },
+      "coverage_fraction": 1.0,
+      "available_samples": 16,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 16,
+            "mean": -5.204170427930421e-18,
+            "std": 3.757548799182136e-16,
+            "min": -5.551115123125783e-16,
+            "max": 8.881784197001252e-16,
+            "median": -8.326672684688674e-17,
+            "p90": 4.440892098500626e-16,
+            "p95": 6.38378239159465e-16,
+            "unit": "m",
+            "values": [
+              -5.551115123125783e-17,
+              -1.6653345369377348e-16,
+              -1.1102230246251565e-16,
+              -5.551115123125783e-16,
+              8.881784197001252e-16,
+              2.220446049250313e-16,
+              1.1102230246251565e-16,
+              5.551115123125783e-16,
+              3.0531133177191805e-16,
+              -4.440892098500626e-16,
+              -3.3306690738754696e-16,
+              -5.551115123125783e-17,
+              -1.1102230246251565e-16,
+              3.3306690738754696e-16,
+              -3.3306690738754696e-16,
+              -3.3306690738754696e-16
+            ]
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 16,
+            "mean": -1.0547118733938987e-15,
+            "std": 6.874199379963111e-15,
+            "min": -1.7763568394002505e-14,
+            "max": 9.769962616701378e-15,
+            "median": 8.881784197001252e-16,
+            "p90": 3.9968028886505635e-15,
+            "p95": 5.773159728050814e-15,
+            "unit": "m",
+            "values": [
+              3.552713678800501e-15,
+              8.881784197001252e-16,
+              2.6645352591003757e-15,
+              -1.1546319456101628e-14,
+              -1.7763568394002505e-14,
+              2.6645352591003757e-15,
+              8.881784197001252e-16,
+              9.769962616701378e-15,
+              -1.7763568394002505e-15,
+              -1.2434497875801753e-14,
+              4.440892098500626e-15,
+              -8.881784197001252e-16,
+              1.7763568394002505e-15,
+              -2.6645352591003757e-15,
+              0.0,
+              3.552713678800501e-15
+            ]
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 16,
+            "mean": 4.861137830222327e-15,
+            "std": 4.987744185512809e-15,
+            "min": 3.3306690738754696e-16,
+            "max": 1.778575899402738e-14,
+            "median": 2.67952118285121e-15,
+            "p90": 1.200104064702376e-14,
+            "p95": 1.3778258883349379e-14,
+            "unit": "m",
+            "values": [
+              3.553147333202946e-15,
+              9.036560719766055e-16,
+              2.6668472207145996e-15,
+              1.1559655780924143e-14,
+              1.778575899402738e-14,
+              2.673771110915334e-15,
+              8.95090418262362e-16,
+              9.78572012285475e-15,
+              1.8024035702895147e-15,
+              1.2442425513123379e-14,
+              4.453364592678439e-15,
+              8.899114524108741e-16,
+              1.7798229048217483e-15,
+              2.6852712547870858e-15,
+              3.3306690738754696e-16,
+              3.568292035180542e-15
+            ]
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 16,
+            "mean": 4.861137830222328e-13,
+            "std": 4.987744185512809e-13,
+            "min": 3.3306690738754696e-14,
+            "max": 1.7785758994027378e-12,
+            "median": 2.67952118285121e-13,
+            "p90": 1.200104064702376e-12,
+            "p95": 1.377825888334938e-12,
+            "unit": "cm",
+            "values": [
+              3.5531473332029457e-13,
+              9.036560719766055e-14,
+              2.6668472207145997e-13,
+              1.1559655780924144e-12,
+              1.7785758994027378e-12,
+              2.6737711109153343e-13,
+              8.950904182623619e-14,
+              9.78572012285475e-13,
+              1.8024035702895148e-13,
+              1.2442425513123378e-12,
+              4.4533645926784394e-13,
+              8.899114524108741e-14,
+              1.7798229048217483e-13,
+              2.685271254787086e-13,
+              3.3306690738754696e-14,
+              3.5682920351805417e-13
+            ]
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 16,
+            "mean": 1.419697692739419e-14,
+            "std": 1.1994640323269332e-14,
+            "min": 0.0,
+            "max": 4.263256414560601e-14,
+            "median": 1.4210854715202004e-14,
+            "p90": 2.842170943040401e-14,
+            "p95": 3.197442310920451e-14,
+            "unit": "deg",
+            "values": [
+              4.263256414560601e-14,
+              2.1316282072803006e-14,
+              3.3306690738754696e-15,
+              0.0,
+              1.4210854715202004e-14,
+              0.0,
+              7.105427357601002e-15,
+              1.4210854715202004e-14,
+              2.842170943040401e-14,
+              1.4210854715202004e-14,
+              1.7763568394002505e-14,
+              1.4210854715202004e-14,
+              0.0,
+              2.842170943040401e-14,
+              0.0,
+              2.1316282072803006e-14
+            ]
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 16,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": 1.0,
+          "pass_fraction_dy": 1.0,
+          "pass_fraction_radial": 1.0,
+          "pass_fraction_orientation": 1.0,
+          "pass_fraction_combined": 1.0,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 16,
+          "unavailable_samples": 0,
+          "coverage_fraction": 1.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_height",
+      "error_amount": 0.1,
+      "error_unit": "m",
+      "range_name": "short",
+      "range_y_m": [
+        2.5,
+        3.5
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_height",
+      "error_amount": 0.1,
+      "error_unit": "m",
+      "range_name": "long",
+      "range_y_m": [
+        6.0,
+        8.0
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_height",
+      "error_amount": 0.2,
+      "error_unit": "m",
+      "range_name": "short",
+      "range_y_m": [
+        2.5,
+        3.5
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_height",
+      "error_amount": 0.2,
+      "error_unit": "m",
+      "range_name": "long",
+      "range_y_m": [
+        6.0,
+        8.0
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_tilt",
+      "error_amount": 0.0,
+      "error_unit": "deg",
+      "range_name": "short",
+      "range_y_m": [
+        2.5,
+        3.5
+      ],
+      "label": "meets_tolerance",
+      "pass_fraction_combined": 1.0,
+      "pass_fraction_radial": 1.0,
+      "pass_fraction_orientation": 1.0,
+      "radial_error_m": {
+        "median": 4.577566798522237e-16,
+        "p95": 1.4590199565672067e-15,
+        "max": 1.784146017590271e-15
+      },
+      "orientation_error_deg": {
+        "median": 1.4210854715202004e-14,
+        "p95": 2.842170943040401e-14,
+        "max": 2.842170943040401e-14
+      },
+      "coverage_fraction": 1.0,
+      "available_samples": 16,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 16,
+            "mean": -3.2959746043559335e-17,
+            "std": 1.0208372327877647e-16,
+            "min": -2.220446049250313e-16,
+            "max": 1.1102230246251565e-16,
+            "median": 0.0,
+            "p90": 1.1102230246251565e-16,
+            "p95": 1.1102230246251565e-16,
+            "unit": "m",
+            "values": [
+              0.0,
+              -2.7755575615628914e-17,
+              -1.6653345369377348e-16,
+              0.0,
+              0.0,
+              0.0,
+              -2.220446049250313e-16,
+              -8.326672684688674e-17,
+              1.1102230246251565e-16,
+              5.551115123125783e-17,
+              0.0,
+              -1.3877787807814457e-16,
+              -1.1102230246251565e-16,
+              -1.6653345369377348e-16,
+              1.1102230246251565e-16,
+              1.1102230246251565e-16
+            ]
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 16,
+            "mean": -5.551115123125783e-17,
+            "std": 8.581815721242673e-16,
+            "min": -1.7763568394002505e-15,
+            "max": 8.881784197001252e-16,
+            "median": 4.440892098500626e-16,
+            "p90": 6.661338147750939e-16,
+            "p95": 8.881784197001252e-16,
+            "unit": "m",
+            "values": [
+              4.440892098500626e-16,
+              0.0,
+              4.440892098500626e-16,
+              4.440892098500626e-16,
+              4.440892098500626e-16,
+              -1.3322676295501878e-15,
+              -1.3322676295501878e-15,
+              4.440892098500626e-16,
+              4.440892098500626e-16,
+              4.440892098500626e-16,
+              4.440892098500626e-16,
+              8.881784197001252e-16,
+              -1.3322676295501878e-15,
+              -1.7763568394002505e-15,
+              -4.440892098500626e-16,
+              8.881784197001252e-16
+            ]
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 16,
+            "mean": 7.307047368918977e-16,
+            "std": 4.659775933949562e-16,
+            "min": 2.7755575615628914e-17,
+            "max": 1.784146017590271e-15,
+            "median": 4.577566798522237e-16,
+            "p90": 1.3437650791752596e-15,
+            "p95": 1.4590199565672067e-15,
+            "unit": "m",
+            "values": [
+              4.440892098500626e-16,
+              2.7755575615628914e-17,
+              4.742874840267547e-16,
+              4.440892098500626e-16,
+              4.440892098500626e-16,
+              1.3322676295501878e-15,
+              1.3506446028928519e-15,
+              4.518280359883027e-16,
+              4.577566798522237e-16,
+              4.47545209131181e-16,
+              4.440892098500626e-16,
+              8.989550626504553e-16,
+              1.336885555457667e-15,
+              1.784146017590271e-15,
+              4.577566798522237e-16,
+              8.95090418262362e-16
+            ]
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 16,
+            "mean": 7.307047368918975e-14,
+            "std": 4.6597759339495616e-14,
+            "min": 2.7755575615628914e-15,
+            "max": 1.7841460175902709e-13,
+            "median": 4.5775667985222375e-14,
+            "p90": 1.3437650791752597e-13,
+            "p95": 1.4590199565672069e-13,
+            "unit": "cm",
+            "values": [
+              4.440892098500626e-14,
+              2.7755575615628914e-15,
+              4.742874840267547e-14,
+              4.440892098500626e-14,
+              4.440892098500626e-14,
+              1.3322676295501878e-13,
+              1.350644602892852e-13,
+              4.5182803598830274e-14,
+              4.5775667985222375e-14,
+              4.4754520913118096e-14,
+              4.440892098500626e-14,
+              8.989550626504553e-14,
+              1.3368855554576671e-13,
+              1.7841460175902709e-13,
+              4.5775667985222375e-14,
+              8.950904182623619e-14
+            ]
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 16,
+            "mean": 1.2656542480726785e-14,
+            "std": 1.0729603364322998e-14,
+            "min": 0.0,
+            "max": 2.842170943040401e-14,
+            "median": 1.4210854715202004e-14,
+            "p90": 2.842170943040401e-14,
+            "p95": 2.842170943040401e-14,
+            "unit": "deg",
+            "values": [
+              1.4210854715202004e-14,
+              0.0,
+              2.842170943040401e-14,
+              0.0,
+              0.0,
+              2.842170943040401e-14,
+              0.0,
+              1.4210854715202004e-14,
+              7.105427357601002e-15,
+              1.0658141036401503e-14,
+              0.0,
+              1.4210854715202004e-14,
+              2.842170943040401e-14,
+              1.4210854715202004e-14,
+              1.4210854715202004e-14,
+              2.842170943040401e-14
+            ]
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 16,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": 1.0,
+          "pass_fraction_dy": 1.0,
+          "pass_fraction_radial": 1.0,
+          "pass_fraction_orientation": 1.0,
+          "pass_fraction_combined": 1.0,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 16,
+          "unavailable_samples": 0,
+          "coverage_fraction": 1.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_tilt",
+      "error_amount": 0.0,
+      "error_unit": "deg",
+      "range_name": "long",
+      "range_y_m": [
+        6.0,
+        8.0
+      ],
+      "label": "meets_tolerance",
+      "pass_fraction_combined": 1.0,
+      "pass_fraction_radial": 1.0,
+      "pass_fraction_orientation": 1.0,
+      "radial_error_m": {
+        "median": 2.231222692200643e-15,
+        "p95": 1.398986090343024e-14,
+        "max": 2.1318883999217677e-14
+      },
+      "orientation_error_deg": {
+        "median": 1.4210854715202004e-14,
+        "p95": 5.861977570020827e-14,
+        "max": 8.526512829121202e-14
+      },
+      "coverage_fraction": 1.0,
+      "available_samples": 16,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 16,
+            "mean": 1.9081958235744878e-17,
+            "std": 2.0247277452933068e-16,
+            "min": -3.3306690738754696e-16,
+            "max": 4.996003610813204e-16,
+            "median": 0.0,
+            "p90": 2.3592239273284576e-16,
+            "p95": 3.3306690738754696e-16,
+            "unit": "m",
+            "values": [
+              1.1102230246251565e-16,
+              2.7755575615628914e-17,
+              -1.1102230246251565e-16,
+              2.7755575615628914e-16,
+              -5.551115123125783e-17,
+              -2.7755575615628914e-17,
+              -5.551115123125783e-17,
+              -3.3306690738754696e-16,
+              0.0,
+              -3.3306690738754696e-16,
+              0.0,
+              1.942890293094024e-16,
+              5.551115123125783e-17,
+              4.996003610813204e-16,
+              1.6653345369377348e-16,
+              -1.1102230246251565e-16
+            ]
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 16,
+            "mean": 2.942091015256665e-15,
+            "std": 6.371703322321507e-15,
+            "min": -1.1546319456101628e-14,
+            "max": 2.1316282072803006e-14,
+            "median": 1.7763568394002505e-15,
+            "p90": 7.549516567451064e-15,
+            "p95": 1.1324274851176597e-14,
+            "unit": "m",
+            "values": [
+              8.881784197001252e-16,
+              8.881784197001252e-16,
+              -8.881784197001252e-16,
+              1.7763568394002505e-15,
+              1.7763568394002505e-15,
+              8.881784197001252e-16,
+              1.7763568394002505e-15,
+              4.440892098500626e-15,
+              2.6645352591003757e-15,
+              2.1316282072803006e-14,
+              2.6645352591003757e-15,
+              6.217248937900877e-15,
+              7.993605777301127e-15,
+              7.105427357601002e-15,
+              -8.881784197001252e-16,
+              -1.1546319456101628e-14
+            ]
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 16,
+            "mean": 4.613040223760583e-15,
+            "std": 5.292988003883964e-15,
+            "min": 8.886119947416683e-16,
+            "max": 2.1318883999217677e-14,
+            "median": 2.231222692200643e-15,
+            "p90": 9.770325863432337e-15,
+            "p95": 1.398986090343024e-14,
+            "unit": "m",
+            "values": [
+              8.95090418262362e-16,
+              8.886119947416683e-16,
+              8.95090418262362e-16,
+              1.7979101253009106e-15,
+              1.7772239894833365e-15,
+              8.886119947416683e-16,
+              1.7772239894833365e-15,
+              4.453364592678439e-15,
+              2.6645352591003757e-15,
+              2.1318883999217677e-14,
+              2.6645352591003757e-15,
+              6.220283963191678e-15,
+              7.993798522030247e-15,
+              7.122969777763861e-15,
+              9.036560719766055e-16,
+              1.1546853204834427e-14
+            ]
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 16,
+            "mean": 4.613040223760583e-13,
+            "std": 5.292988003883964e-13,
+            "min": 8.886119947416683e-14,
+            "max": 2.1318883999217676e-12,
+            "median": 2.2312226922006433e-13,
+            "p90": 9.770325863432338e-13,
+            "p95": 1.3989860903430238e-12,
+            "unit": "cm",
+            "values": [
+              8.950904182623619e-14,
+              8.886119947416683e-14,
+              8.950904182623619e-14,
+              1.7979101253009106e-13,
+              1.7772239894833365e-13,
+              8.886119947416683e-14,
+              1.7772239894833365e-13,
+              4.4533645926784394e-13,
+              2.6645352591003757e-13,
+              2.1318883999217676e-12,
+              2.6645352591003757e-13,
+              6.220283963191678e-13,
+              7.993798522030247e-13,
+              7.122969777763861e-13,
+              9.036560719766055e-14,
+              1.1546853204834427e-12
+            ]
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 16,
+            "mean": 2.020605904817785e-14,
+            "std": 2.238910005921133e-14,
+            "min": 0.0,
+            "max": 8.526512829121202e-14,
+            "median": 1.4210854715202004e-14,
+            "p90": 4.618527782440651e-14,
+            "p95": 5.861977570020827e-14,
+            "unit": "deg",
+            "values": [
+              1.0658141036401503e-14,
+              0.0,
+              2.842170943040401e-14,
+              4.973799150320701e-14,
+              0.0,
+              1.4210854715202004e-14,
+              1.4210854715202004e-14,
+              0.0,
+              2.842170943040401e-14,
+              1.4210854715202004e-14,
+              1.4210854715202004e-14,
+              2.1316282072803006e-14,
+              4.263256414560601e-14,
+              0.0,
+              0.0,
+              8.526512829121202e-14
+            ]
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 16,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": 1.0,
+          "pass_fraction_dy": 1.0,
+          "pass_fraction_radial": 1.0,
+          "pass_fraction_orientation": 1.0,
+          "pass_fraction_combined": 1.0,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 16,
+          "unavailable_samples": 0,
+          "coverage_fraction": 1.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_tilt",
+      "error_amount": 3.0,
+      "error_unit": "deg",
+      "range_name": "short",
+      "range_y_m": [
+        2.5,
+        3.5
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_tilt",
+      "error_amount": 3.0,
+      "error_unit": "deg",
+      "range_name": "long",
+      "range_y_m": [
+        6.0,
+        8.0
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_tilt",
+      "error_amount": 6.0,
+      "error_unit": "deg",
+      "range_name": "short",
+      "range_y_m": [
+        2.5,
+        3.5
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    },
+    {
+      "error_type": "camera_tilt",
+      "error_amount": 6.0,
+      "error_unit": "deg",
+      "range_name": "long",
+      "range_y_m": [
+        6.0,
+        8.0
+      ],
+      "label": "fails_tolerance",
+      "pass_fraction_combined": null,
+      "pass_fraction_radial": null,
+      "pass_fraction_orientation": null,
+      "radial_error_m": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "orientation_error_deg": {
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "coverage_fraction": 0.0,
+      "available_samples": 0,
+      "total_samples": 16,
+      "provenance": "simulated",
+      "error_report": {
+        "translation_error": {
+          "dx_m": {
+            "name": "translation_error_dx",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "dy_m": {
+            "name": "translation_error_dy",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_m": {
+            "name": "translation_error_radial",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "m",
+            "values": []
+          },
+          "radial_cm": {
+            "name": "translation_error_radial_cm",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "cm",
+            "values": []
+          }
+        },
+        "rotation_error": {
+          "orientation_deg": {
+            "name": "rotation_error",
+            "sample_count": 0,
+            "mean": null,
+            "std": null,
+            "min": null,
+            "max": null,
+            "median": null,
+            "p90": null,
+            "p95": null,
+            "unit": "deg",
+            "values": []
+          }
+        },
+        "tolerance_evaluation": {
+          "sample_count": 0,
+          "position_tolerance_m": 0.02,
+          "orientation_tolerance_deg": 3.0,
+          "pass_fraction_dx": null,
+          "pass_fraction_dy": null,
+          "pass_fraction_radial": null,
+          "pass_fraction_orientation": null,
+          "pass_fraction_combined": null,
+          "tolerance_semantics": "evaluation_target_not_guarantee"
+        },
+        "coverage": {
+          "total_samples": 16,
+          "available_samples": 0,
+          "unavailable_samples": 16,
+          "coverage_fraction": 0.0
+        },
+        "provenance": "simulated"
+      },
+      "comparison": "estimated pose vs known simulated pose"
+    }
+  ],
+  "envelope_partition": {
+    "meets_tolerance": 4,
+    "fails_tolerance": 8,
+    "insufficient_evidence": 0
+  },
+  "honesty_note": "Every result is simulated. True and assumed calibrations are both synthetic; no real camera measurement, real pose ground truth, or real-world compliance claim is included. Only listed grid points were evaluated; no extrapolation is made."
+}

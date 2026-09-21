@@ -21,6 +21,11 @@ htmlcov/
 data/**
 !data/.gitkeep
 
+# Local real demonstration photos are private/untracked and are not part of the
+# submitted training/evaluation corpus.
+SOP_CV_Lab_Photos/
+SOP_CV_Lab_Photos_JPG/
+
 # Trained model weights: tracked (they are small, <25MB total) so the repo is
 # self-contained per the assignment ("trained weights or link"). If they grow,
 # switch to a release/link and re-ignore.
@@ -30,9 +35,14 @@ data/**
 runs/**
 !runs/.gitkeep
 
-# Generated outputs (illustrative examples committed explicitly if needed)
+# Generated outputs: keep illustrative assignment examples and failure images,
+# ignore ad-hoc live captures.
 outputs/**
 !outputs/.gitkeep
+!outputs/examples/
+!outputs/examples/**
+!outputs/failure_cases/
+!outputs/failure_cases/**
 
 # Stock/pretrained base weights downloaded by ultralytics (not our artefacts)
 /yolo*.pt
